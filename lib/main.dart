@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
               visualDensity: VisualDensity.adaptivePlatformDensity,
               fontFamily: 'Montserrat',
               textTheme: TextTheme(
-                bodyText2: TextStyle(fontSize: 20, color: Colors.grey[700]),
+                bodyText2: TextStyle(fontSize: 16, color: Colors.grey[700]),
               ),
               appBarTheme: const AppBarTheme(
                 elevation: 0,
@@ -64,11 +64,12 @@ class _MyAppState extends State<MyApp> {
               visualDensity: VisualDensity.adaptivePlatformDensity,
               fontFamily: 'Montserrat',
               textTheme: const TextTheme(
-                bodyText2: TextStyle(fontSize: 20),
+                bodyText2: TextStyle(fontSize: 16),
               ),
               appBarTheme: const AppBarTheme(
                 elevation: 0,
               ),
+              cardColor: ColorsApp.primaryColorDark(),
             ),
             themeMode:
                 _preferencesManager.dark ? ThemeMode.dark : ThemeMode.light,
