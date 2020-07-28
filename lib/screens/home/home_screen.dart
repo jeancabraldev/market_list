@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:market_list/models/preference/preference_manager.dart';
-import 'package:provider/provider.dart';
+import 'package:market_list/screens/home/components/card_list_widget.dart';
 import 'package:market_list/widget/drawer/drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -17,7 +16,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeDark = context.watch<PreferenceManager>();
     return Scaffold(
       drawer: DrawerWidget(),
       appBar: AppBar(
@@ -63,9 +61,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         FlatButton(
                           onPressed: () {
-                            if (_formKey.currentState.validate()) {
-
-                            }
+                            if (_formKey.currentState.validate()) {}
                           },
                           child: const Text('Criar Lista'),
                         ),
@@ -81,47 +77,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         shrinkWrap: true,
         children: <Widget>[
-          Card(
-            margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  if (themeDark.dark)
-                    Image.asset(
-                      'assets/images/cart_dark.png',
-                      width: 50,
-                      height: 50,
-                    )
-                  else
-                    Image.asset(
-                      'assets/images/cart.png',
-                      width: 50,
-                      height: 50,
-                    ),
-                  const SizedBox(width: 20),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const <Widget>[
-                      Text('Nome da Lista'),
-                      Text(
-                        '(0 itens) - 26/07/20',
-                        style: TextStyle(
-                          fontSize: 12,
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(width: 118),
-                  Icon(
-                    Icons.more_vert,
-                    color: themeDark.dark ? Colors.white : Colors.grey[700],
-                  ),
-                ],
-              ),
-            ),
-          ),
+          CardListWidget(),
         ],
       ),
     );

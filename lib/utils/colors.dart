@@ -10,4 +10,7 @@ class ColorsApp {
 
   //Light
   static Color primaryColorLight() => Colors.deepOrange;
+
+  //Icons
+  static Color primaryColorIconLight() => Colors.grey[500];
 }

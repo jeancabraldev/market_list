@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:market_list/screens/list/list_screen.dart';
 import 'package:market_list/utils/colors.dart';
 import 'package:provider/provider.dart';
 import 'package:market_list/screens/base/base_screen.dart';
@@ -76,6 +77,11 @@ class _MyAppState extends State<MyApp> {
             initialRoute: Routes.baseScreen,
             onGenerateRoute: (settings) {
               switch (settings.name) {
+                case Routes.listScreen:
+                  return MaterialPageRoute(
+                    builder: (_) => ListScreen(),
+                  );
+
                 case Routes.baseScreen:
                 default:
                   return MaterialPageRoute(
